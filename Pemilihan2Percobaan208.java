@@ -5,17 +5,13 @@ public class Pemilihan2Percobaan208 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String menu, member, jumlahbeli;
-        String metodepembayaran;
-        metodepembayaran = input.nextLine();
-        int potongan = 0;
+        String menu, member, jumlahbeli, payment_metode;
+        
         double totalbayar;
-        totalbayar = input.nextDouble();
         int pilihan_menu;
         double diskon; 
         int harga;
         harga = input.nextInt();
-        double hargaakhir;
 
 
         System.out.println("-------------------------");
@@ -31,6 +27,8 @@ public class Pemilihan2Percobaan208 {
         input.nextLine();
         System.out.println("Apakah punya member (y/n) ? = ");
         member = input.nextLine();
+        System.out.println("(qris/cash) = ");
+        payment_metode = input.nextLine();
         System.out.println("-------------------------------------");
 
         if (member.equalsIgnoreCase("y")) {
@@ -50,10 +48,11 @@ public class Pemilihan2Percobaan208 {
 
             } else {
                 System.out.println("masukkan pilihan menu dengan benar");
+                return;
             }
             
-            //totalbayar =  harga - (harga * diskon);
-            //System.out.println("total bayar setelah diskon = " + totalbayar);
+            totalbayar = harga - (harga * diskon);
+            
             
         } else if (member.equalsIgnoreCase("n")) {
             if (pilihan_menu == 1) {
@@ -72,14 +71,18 @@ public class Pemilihan2Percobaan208 {
                 System.out.println("masukkan pilihan menu dengan benar");
                 return;
 
-            } if (metodepembayaran.equalsIgnoreCase("QRIS")) {
-                potongan = 1000;
-                totalbayar -= 1000;
-                
+            } 
+            totalbayar = harga;
             }
-            System.out.println("Total bayar = " + potongan);
+            double final_payment = 0;
+            if (payment_metode.equalsIgnoreCase("qris")) {
+                final_payment = harga - 1000;
+
+            } else {
+                final_payment = harga;
             }
-        
+            System.out.println("total bayar = " + final_payment);
+            System.out.println("metode bayar = " + payment_metode);
         }
         
     }

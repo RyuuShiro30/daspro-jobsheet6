@@ -33,7 +33,7 @@ public class Pemilihan2Percobaan308 {
                 pajak = 0.15;
             } else if (penghasilan <= 3500000) {
                 pajak = 0.2;
-
+            
             } else {
                 pajak = 0.25;
                 gajibersih = (int) (penghasilan - (pajak * penghasilan));
