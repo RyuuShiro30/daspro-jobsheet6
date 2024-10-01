@@ -20,11 +20,22 @@ public class Pemilihan2Percobaan208 {
         totalsudut = sudut1 + sudut2 + sudut3;
 
         if (totalsudut == 180) {
-            if ((sudut1 == 90) || (sudut2 == 90) || (sudut3 == 90)) {
+            if ((sudut1 == 90) && (sudut2 != 90) && (sudut3 != 90)) {
                 System.out.println("segitiga siku-siku");
                 
             } else {
-                System.out.println("bukan segitiga siku-siku");
+                if ((sudut1 == sudut2) && (sudut2 == sudut3)) {
+                    System.out.println("segitiga sama sisi");
+                    
+                } else {
+                    if ((sudut1 == sudut2 || sudut2 == sudut3 || sudut3 == sudut1)) {
+                        System.out.println("segitiga sama kaki");
+                        
+                    } else {
+                        System.out.println("segitiga sembarang");
+                    }
+                }
+                
             }
         
         } else {
